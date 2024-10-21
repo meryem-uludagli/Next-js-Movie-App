@@ -1,17 +1,13 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 
 const Movies = ({ dt }) => {
-  const router = useRouter();
   console.log(dt, "dt");
   return (
-    <div
-      onClick={() => router.push(`/movie/${dt?.id}`)}
-      className="min-w-[470px] relative imgContainer cursor-pointer"
-    >
+    <div className="min-w-[470px] relative imgContainer cursor-pointer">
       <Image
+        style={{ objectFit: "cover" }}
         width={470}
         height={300}
         src={`https://image.tmdb.org/t/p/original/${
